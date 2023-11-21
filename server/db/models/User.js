@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 const db = require("../db.js");
 require("dotenv").config();
 
-const { STRING, UUID, UUIDV4 } = Sequelize;
+const { STRING, UUID, UUIDV4, INTEGER, REAL, TEXT } = Sequelize;
 
 const SALT_ROUNDS = 5;
 
@@ -33,6 +33,74 @@ const User = db.define("users", {
     validate: {
       notEmpty: true,
     },
+  },
+  stage: {
+    type: INTEGER,
+    defaultValue: 1,
+  },
+  score1: {
+    type: REAL,
+    defaultValue: null,
+  },
+  notes1: {
+    type: TEXT,
+    defaultValue: null,
+  },
+  score2: {
+    type: REAL,
+    defaultValue: null,
+  },
+  notes2: {
+    type: TEXT,
+    defaultValue: null,
+  },
+  score3: {
+    type: REAL,
+    defaultValue: null,
+  },
+  notes3: {
+    type: TEXT,
+    defaultValue: null,
+  },
+  score4: {
+    type: REAL,
+    defaultValue: null,
+  },
+  notes4: {
+    type: TEXT,
+    defaultValue: null,
+  },
+  score5: {
+    type: REAL,
+    defaultValue: null,
+  },
+  notes5: {
+    type: TEXT,
+    defaultValue: null,
+  },
+  score6: {
+    type: REAL,
+    defaultValue: null,
+  },
+  notes6: {
+    type: TEXT,
+    defaultValue: null,
+  },
+  score7: {
+    type: REAL,
+    defaultValue: null,
+  },
+  notes7: {
+    type: TEXT,
+    defaultValue: null,
+  },
+  score8: {
+    type: REAL,
+    defaultValue: null,
+  },
+  notes8: {
+    type: TEXT,
+    defaultValue: null,
   },
 });
 
@@ -69,9 +137,7 @@ User.authenticate = async ({ email, password }) => {
     });
 
     if (user && (await bcrypt.compare(password, user.password))) {
-      const token = jwt.sign({ id: user.id }, process.env.JWT, {
-        expiresIn: 30 * 60,
-      });
+      const token = jwt.sign({ id: user.id }, process.env.JWT);
       return token;
     }
     const error = Error("bad credentials - in authenticate - try");
