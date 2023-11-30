@@ -1,32 +1,68 @@
 //////////////////css////////////////// ---START
 
-/////////stage 1///////// ---START
-////main page ---START
-//1 row per wine
-//columns for: wine #, score, and notes
+/////////stage 0///////// ---START
+////zoomed out view ---START
+
+////zoomed out view - when there are full picks ---START
+//current writing a func to break out the notes to have a viewing limit of 90
 //edit wine info by clicking on the wine's row - then it goes to zoomed in view
 
-////main page ---END
+////zoomed out view - when there are full picks ---END
+
+////zoomed out view - when there are half incomplete picks ---START
+//everything works
+//nav back and forth from the zoomed out to zoomed in view
+
+////zoomed out view - when there are half incomplete picks ---END
+
+////zoomed out view - when there are no picks ---START
+//everything works
+//nav back and forth from the zoomed out to zoomed in view
+
+////zoomed out view - when there are no picks ---END
+
+////zoomed out view ---END
 
 ////zoomed in view ---START
+////zoomed in view - when there are full picks ---START
 //columns for: wine #, score, and notes
 //score === dropdown with incriment options of .5 through 5 - user can type in number too
 //note section can be edited
 //save button at top
 //cancel button at top
 
+////zoomed in view - when there are full picks ---END
+
+////zoomed out view - when there are half incomplete picks ---START
+//everything works
+//nav back and forth from the zoomed out to zoomed in view
+
+////zoomed out view - when there are half incomplete picks ---END
+
+////zoomed out view - when there are no picks ---START
+//everything works
+//nav back and forth from the zoomed out to zoomed in view
+
+////zoomed out view - when there are no picks ---END
+
+/////////stage 0///////// ---END
+
+/////////stage 1-8 --- on stage 1///////// ---START
+////zoomed out view ---START
+//only shows the first wine and it's rank
+//columns for: rank, wine #, and total score - ordered by total score, if there is a tie, wine # is next order
+//view wine info by clicking on the wine's row - then it goes to zoomed in view
+
+////zoomed out view ---END
+
+////zoomed in view ---START
+//shows the wine # at the top
+//shows each user and their rank of the wine, ranked by highest to lowest
+//each users row has: their name, rank, and notes
+
 ////zoomed in view ---END
-/////////stage 1///////// ---END
 
-/////////stage 2///////// ---START
-////main page ---START
-//1 row per wine
-//columns for: wine #, and total score - ordered by total score, if there is a tie, wine # is next order
-//edit wine info by clicking on the wine's row - then it goes to zoomed in view
-
-////main page ---END
-
-/////////stage 2///////// ---END
+/////////stage 1-8 --- on stage 1///////// ---END
 
 ////admin page ---START
 //shows each user and a red box/red x for each wine that they haven't submitted

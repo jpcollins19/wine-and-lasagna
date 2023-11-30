@@ -40,7 +40,7 @@ const User = db.define("users", {
   },
   stage: {
     type: INTEGER,
-    defaultValue: 1,
+    defaultValue: 0,
   },
   score1: {
     type: REAL,

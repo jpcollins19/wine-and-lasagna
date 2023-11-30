@@ -16,16 +16,18 @@ const users = [
     score5: 4,
     score6: 4.5,
     score7: 3,
-    score8: 2,
+    score8: null,
     notes1: "this is wine 1",
     notes2: "this is wine 2 - it sucks",
-    notes3: "this is wine 3 - it was delicious",
-    notes4: null,
+    notes3:
+      "this is wine 3 - it was delicious this is wine 3 - it was delici3 - it was delicious this is wine 3 - it was delici3 - it was delicious this is wine 3 - it was delicious this is wine 3 - it was delicious this is wine 3 - it was delicious",
+    notes4:
+      "how much wood could a wood chuck chuck is a wood chuck could chuck wood.  im currently watching aresenal and we are winning 5-0 at halftime.  5 difference players scored - havertz, jesus, saka, martinelli and odegaard!  I also won over $100 betting on a number of outcomes, all 4 of my bets hit",
     notes5: null,
     notes6: null,
     notes7: null,
     notes8: null,
-    stage: 1,
+    stage: 0,
   },
 
   //kelly

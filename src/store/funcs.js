@@ -104,6 +104,71 @@ const getUserNames = (arr) => {
   });
 };
 
+const clearArr = (arr) => {
+  while (arr.length) {
+    arr.pop();
+    return clearArr(arr);
+  }
+};
+
+const trimNotes = (str) => {
+  if (str.length <= 90) return str;
+
+  console.log("------------------------------------");
+
+  const regex = /[^a-zA-Z/$]/;
+  const otherRegex = /[$\"]/g;
+
+  const split = str.split("");
+
+  const answer = [];
+  const currentWord = [];
+
+  split.forEach((char, idx) => {
+    const previousChar = str[idx - 1];
+    const isLetter = !char.match(regex);
+
+    if (isLetter) {
+      currentWord.push(char);
+    } else {
+      const currentWordLength = currentWord.length;
+      const answerLength = answer.length;
+
+      if (currentWordLength + answerLength <= 90) {
+        currentWord.forEach((letter) => answer.push(letter));
+
+        const newAnswerLength = answer.length;
+
+        clearArr(currentWord);
+
+        if (newAnswerLength + 1 <= 90) {
+          answer.push(char);
+        }
+
+        const isPeriod = char === ".";
+        const isPreviousCharALetter = !previousChar.match(regex);
+
+        if (isPeriod && isPreviousCharALetter) {
+          answer.push(char);
+        }
+
+        const isSpace = char === " ";
+
+        if (isSpace) {
+        }
+      }
+    }
+  });
+
+  const lastAnswerChar = answer[answer.length - 1];
+
+  if (lastAnswerChar === " ") {
+    answer.pop();
+  }
+
+  return answer.join("");
+};
+
 module.exports = {
   findJoe,
   cap1stLetter,
@@ -112,4 +177,5 @@ module.exports = {
   calcWineScores,
   validateEmail,
   getUserNames,
+  trimNotes,
 };
