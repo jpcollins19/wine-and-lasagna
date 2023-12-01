@@ -8,6 +8,7 @@ import Sign_In_Page from "./components/UserAccount/SignIn/Sign_In_Page";
 import Create_Account_Page from "./components/UserAccount/CreateAccount/Create_Account_Page";
 import Action_Confirmation from "./components/UserAccount/Action_Confirmation";
 import Home from "./components/home/Home";
+import Single_Wine_Page from "./components/single_wine_page/Single_Wine_Page";
 import Admin from "./components/admin/Admin";
 // import Leaderboard_Page from "./components/leaderboard/Leaderboard_Page";
 // import Group_Details_Page from "./components/group_details/Group_Details_Page";
@@ -78,6 +79,10 @@ const Routes = () => {
       )}
 
       <Route path="/home">{!user?.id ? <Redirect to="/" /> : <Home />}</Route>
+
+      <Route path="/rank/:id">
+        {!user?.id ? <Redirect to="/" /> : <Single_Wine_Page />}
+      </Route>
 
       {user?.isAdmin && (
         <Route path="/admin">

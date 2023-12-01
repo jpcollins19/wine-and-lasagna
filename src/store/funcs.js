@@ -114,48 +114,29 @@ const clearArr = (arr) => {
 const trimNotes = (str) => {
   if (str.length <= 90) return str;
 
-  console.log("------------------------------------");
-
-  const regex = /[^a-zA-Z/$]/;
-  const otherRegex = /[$\"]/g;
-
   const split = str.split("");
 
   const answer = [];
   const currentWord = [];
 
   split.forEach((char, idx) => {
-    const previousChar = str[idx - 1];
-    const isLetter = !char.match(regex);
+    const lastIdx = idx === str.length - 1;
 
-    if (isLetter) {
-      currentWord.push(char);
-    } else {
+    const nextChar = str[idx + 1];
+
+    const space = " ";
+    const isNextCharASpace = !lastIdx && nextChar === space;
+
+    currentWord.push(char);
+
+    if (isNextCharASpace) {
       const currentWordLength = currentWord.length;
       const answerLength = answer.length;
 
       if (currentWordLength + answerLength <= 90) {
         currentWord.forEach((letter) => answer.push(letter));
 
-        const newAnswerLength = answer.length;
-
         clearArr(currentWord);
-
-        if (newAnswerLength + 1 <= 90) {
-          answer.push(char);
-        }
-
-        const isPeriod = char === ".";
-        const isPreviousCharALetter = !previousChar.match(regex);
-
-        if (isPeriod && isPreviousCharALetter) {
-          answer.push(char);
-        }
-
-        const isSpace = char === " ";
-
-        if (isSpace) {
-        }
       }
     }
   });

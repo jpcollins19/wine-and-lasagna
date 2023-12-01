@@ -40,7 +40,6 @@ export const loadUsers = () => {
 };
 
 export const updateUser = (user) => {
-  console.log("byah-user", user);
   return async (dispatch) => {
     user = (await axios.put(`/api/users/${user.id}`, user)).data;
   };

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { HashRouter as Router } from "react-router-dom";
-import { loadUsers } from "./store";
+import { loadUsers, loadWines } from "./store";
 import Header from "./components/header/Header";
 import Routes from "./Routes";
 import "./App.css";
@@ -11,6 +11,7 @@ const App = () => {
 
   useEffect(() => {
     dispatch(loadUsers());
+    dispatch(loadWines());
   }, []);
 
   const users = useSelector((state) => state.users);

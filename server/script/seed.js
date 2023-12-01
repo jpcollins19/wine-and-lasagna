@@ -1,6 +1,6 @@
 const {
   db,
-  models: { User },
+  models: { User, Wine },
 } = require("../db/index.js");
 
 const users = [
@@ -16,7 +16,7 @@ const users = [
     score5: 4,
     score6: 4.5,
     score7: 3,
-    score8: null,
+    score8: 2,
     notes1: "this is wine 1",
     notes2: "this is wine 2 - it sucks",
     notes3:
@@ -192,6 +192,17 @@ const users = [
   },
 ];
 
+const wines = [
+  { number: 1, name: "wineNameJoe" },
+  { number: 2, name: "wineNameKelly" },
+  { number: 3, name: "wineNameDalton" },
+  { number: 4, name: "wineNameNicole" },
+  { number: 5, name: "wineNamePolizzi" },
+  { number: 6, name: "wineNameKatie" },
+  { number: 7, name: "wineNameMatt" },
+  { number: 8, name: null },
+];
+
 const syncAndSeed = async () => {
   await db.sync({ force: true });
   /////////////////////////////////////////////////////////////
@@ -223,6 +234,15 @@ const syncAndSeed = async () => {
         })
       )
     );
+
+  await Promise.all(
+    wines.map((w) =>
+      Wine.create({
+        number: w.number,
+        name: w.name,
+      })
+    )
+  );
 };
 
 module.exports = syncAndSeed;

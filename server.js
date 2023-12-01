@@ -3,12 +3,6 @@
 /////////stage 0///////// ---START
 ////zoomed out view ---START
 
-////zoomed out view - when there are full picks ---START
-//current writing a func to break out the notes to have a viewing limit of 90
-//edit wine info by clicking on the wine's row - then it goes to zoomed in view
-
-////zoomed out view - when there are full picks ---END
-
 ////zoomed out view - when there are half incomplete picks ---START
 //everything works
 //nav back and forth from the zoomed out to zoomed in view
@@ -50,13 +44,13 @@
 /////////stage 1-8 --- on stage 1///////// ---START
 ////zoomed out view ---START
 //only shows the first wine and it's rank
-//columns for: rank, wine #, and total score - ordered by total score, if there is a tie, wine # is next order
+//columns for: rank, wine #, wine name, and total score - ordered by total score, if there is a tie, wine # is next order
 //view wine info by clicking on the wine's row - then it goes to zoomed in view
 
 ////zoomed out view ---END
 
 ////zoomed in view ---START
-//shows the wine # at the top
+//shows the wine # and name at the top
 //shows each user and their rank of the wine, ranked by highest to lowest
 //each users row has: their name, rank, and notes
 
@@ -69,6 +63,8 @@
 //can click on a user to edit their email/pw
 
 //ability to delete a user
+
+//ability to update the name of the wine
 
 ////admin page ---END
 
@@ -106,6 +102,7 @@ app.use("/dist", express.static(path.join(__dirname, "dist")));
 // app.use("/public/css", express.static(path.join(__dirname, "public/css")));
 // app.use("/public/pics", express.static(path.join(__dirname, "public/pics")));
 
+app.use("/", require("./server/api/wines.js"));
 app.use("/", require("./server/api/users.js"));
 app.use("/", require("./server/api/auth.js"));
 app.use("/", (req, res, next) =>

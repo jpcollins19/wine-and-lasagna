@@ -3,12 +3,14 @@ import thunk from "redux-thunk";
 import auth from "./auth_store";
 
 const { users } = require("./users_store");
+const { wines } = require("./wines_store");
 
-const reducer = combineReducers({ auth, users });
+const reducer = combineReducers({ auth, users, wines });
 const middleware = applyMiddleware(thunk);
 const store = createStore(reducer, middleware);
 
 export default store;
 export * from "./auth_store";
 export * from "./users_store";
+export * from "./wines_store";
 export * from "./funcs";
