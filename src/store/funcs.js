@@ -150,6 +150,19 @@ const trimNotes = (str) => {
   return answer.join("");
 };
 
+const findWine = (wines, url) => {
+  const wineId = url.split("/")[2];
+  return wines.find((wine) => wine.id === wineId);
+};
+
+const convertNumToDropdownOption = (num) => {
+  const isInt = Number.isInteger(num);
+
+  num = isInt ? num + ".0" : num;
+
+  return { value: num, label: num };
+};
+
 module.exports = {
   findJoe,
   cap1stLetter,
@@ -159,4 +172,6 @@ module.exports = {
   validateEmail,
   getUserNames,
   trimNotes,
+  findWine,
+  convertNumToDropdownOption,
 };

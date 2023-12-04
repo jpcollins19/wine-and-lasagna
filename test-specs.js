@@ -4,6 +4,7 @@ const {
   formatURL,
   calcWineScores,
   trimNotes,
+  findWine,
 } = require("./src/store/funcs");
 
 describe("func testing", () => {
@@ -860,6 +861,78 @@ describe("func testing", () => {
       it(`${test.title}`, () => {
         const result = trimNotes(test.value);
         expect(result).to.equal(test.result);
+      });
+    });
+  });
+
+  describe("findWine", () => {
+    const wines = [
+      {
+        id: "bfecbdd0-6a85-47e7-9cd1-fbb925322ae1",
+        number: 1,
+        name: "wineNameJoe",
+      },
+      {
+        id: "5973efcf-4760-42d2-9037-0bc0df78a801",
+        number: 2,
+        name: "wineNameKelly",
+      },
+      {
+        id: "29644212-bc31-44cf-833c-73e3fb1cc906",
+        number: 3,
+        name: "wineNameDalton",
+      },
+      {
+        id: "5065566d-a440-449b-a783-2ff2cd4a7d80",
+        number: 4,
+        name: "wineNameNicole",
+      },
+      {
+        id: "5eaeda3e-4a52-4fbe-9ea7-5116b825549d",
+        number: 6,
+        name: "wineNameKatie",
+      },
+      {
+        id: "89b62a16-9a18-4f50-9979-74e6f2eeb3da",
+        number: 5,
+        name: "wineNamePolizzi",
+      },
+      {
+        id: "243cfc12-17ed-45f9-97c1-e02bb46108b8",
+        number: 7,
+        name: "wineNameMatt",
+      },
+      {
+        id: "c69f56dd-43b8-4c9c-9822-b36d1e9296c4",
+        number: 8,
+        name: null,
+      },
+    ];
+
+    const findWineTesting = [
+      {
+        value: "when url is rank, find wine #1",
+        url: "/rank/bfecbdd0-6a85-47e7-9cd1-fbb925322ae1",
+        resultId: "bfecbdd0-6a85-47e7-9cd1-fbb925322ae1",
+        resultNumber: 1,
+        resultName: "wineNameJoe",
+      },
+      {
+        value: "when url is result, find wine #4",
+        url: "/result/5065566d-a440-449b-a783-2ff2cd4a7d80",
+        resultId: "5065566d-a440-449b-a783-2ff2cd4a7d80",
+        resultNumber: 4,
+        resultName: "wineNameNicole",
+      },
+    ];
+
+    findWineTesting.forEach((test) => {
+      it(`${test.value}`, () => {
+        const result = findWine(wines, test.url);
+
+        expect(result.id).to.equal(test.resultId);
+        expect(result.number).to.equal(test.resultNumber);
+        expect(result.name).to.equal(test.resultName);
       });
     });
   });

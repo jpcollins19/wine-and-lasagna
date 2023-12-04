@@ -1,29 +1,15 @@
 //////////////////css////////////////// ---START
 
 /////////stage 0///////// ---START
-////zoomed out view ---START
-
-////zoomed out view - when there are half incomplete picks ---START
-//everything works
-//nav back and forth from the zoomed out to zoomed in view
-
-////zoomed out view - when there are half incomplete picks ---END
-
-////zoomed out view - when there are no picks ---START
-//everything works
-//nav back and forth from the zoomed out to zoomed in view
-
-////zoomed out view - when there are no picks ---END
-
-////zoomed out view ---END
 
 ////zoomed in view ---START
 ////zoomed in view - when there are full picks ---START
-//columns for: wine #, score, and notes
-//score === dropdown with incriment options of .5 through 5 - user can type in number too
-//note section can be edited
+//rows for: wine #, score, and notes
+//on the point of adjusting/saving the wineRank in the dropdown
 //save button at top
 //cancel button at top
+
+//note section can be edited
 
 ////zoomed in view - when there are full picks ---END
 
