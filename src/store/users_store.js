@@ -39,9 +39,11 @@ export const loadUsers = () => {
   };
 };
 
-export const updateUser = (user) => {
+export const updateUser = (user, history) => {
   return async (dispatch) => {
     user = (await axios.put(`/api/users/${user.id}`, user)).data;
+
+    history.push("/home");
   };
 };
 

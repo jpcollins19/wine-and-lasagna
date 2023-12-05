@@ -1,32 +1,5 @@
 //////////////////css////////////////// ---START
 
-/////////stage 0///////// ---START
-
-////zoomed in view ---START
-////zoomed in view - when there are full picks ---START
-//rows for: wine #, score, and notes
-//on the point of adjusting/saving the wineRank in the dropdown
-//save button at top
-//cancel button at top
-
-//note section can be edited
-
-////zoomed in view - when there are full picks ---END
-
-////zoomed out view - when there are half incomplete picks ---START
-//everything works
-//nav back and forth from the zoomed out to zoomed in view
-
-////zoomed out view - when there are half incomplete picks ---END
-
-////zoomed out view - when there are no picks ---START
-//everything works
-//nav back and forth from the zoomed out to zoomed in view
-
-////zoomed out view - when there are no picks ---END
-
-/////////stage 0///////// ---END
-
 /////////stage 1-8 --- on stage 1///////// ---START
 ////zoomed out view ---START
 //only shows the first wine and it's rank
@@ -67,7 +40,10 @@
 //name already in use
 //pws do not match
 
+//single wine rank page - cannot submit with a null score
+
 /// verify that the site still works if some users have a null score answer for their wine
+//login via incognito window and put yourself and Dalton at a diff state as far as how many wines that you have answered for
 
 ////error testing ----START
 
