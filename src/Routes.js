@@ -85,7 +85,13 @@ const Routes = () => {
       </Route>
 
       {user?.isAdmin && (
-        <Route path="/admin">
+        <Route exact path="/admin/users">
+          {!user?.id ? <Redirect to="/" /> : <Admin />}
+        </Route>
+      )}
+
+      {user?.isAdmin && (
+        <Route exact path="/admin/wines">
           {!user?.id ? <Redirect to="/" /> : <Admin />}
         </Route>
       )}

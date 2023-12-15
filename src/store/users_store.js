@@ -12,9 +12,15 @@ const _addUser = (user) => {
   return { type: ADD_USER, user };
 };
 
+const _deleteUser = (user) => {
+  return { type: DELETE_USER, user };
+};
+
 export const loadUsers = () => {
   return async (dispatch) => {
     let users = (await axios.get("/api/users")).data;
+
+    let order = 2;
 
     users = users.map((u) => {
       const obj = {
@@ -22,9 +28,13 @@ export const loadUsers = () => {
         email: u.email,
         password: u.password,
         name: u.name,
-        admin: u.admin,
+        isAdmin: u.isAdmin,
         stage: u.stage,
       };
+
+      const isUserJoe = u.isAdmin;
+
+      isUserJoe ? (obj.order = 1) : (obj.order = order++);
 
       for (let i = 1; i <= 8; i++) {
         obj[`wine${i}`] = {
@@ -35,6 +45,9 @@ export const loadUsers = () => {
 
       return obj;
     });
+
+    users.sort((a, b) => a.order - b.order);
+
     dispatch(_loadUsers(users));
   };
 };
@@ -52,6 +65,14 @@ export const addUser = (user, history) => {
     user = (await axios.post("/api/add/user", user)).data;
     dispatch(_addUser(user));
     history.push("/account_created");
+  };
+};
+
+export const deleteUser = (user, history) => {
+  return async (dispatch) => {
+    await axios.delete(`/api/users/${user.id}`);
+    dispatch(_deleteUser(user));
+    history.push("/home");
   };
 };
 
