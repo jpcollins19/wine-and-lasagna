@@ -1,5 +1,7 @@
+const { wineNums } = require("./global_variables");
+
 const findJoe = (arr) => {
-  return arr.find((user) => user?.admin);
+  return arr.find((user) => user.isAdmin);
 };
 
 const cap1stLetter = (str) => {
@@ -56,8 +58,6 @@ const calcWineScores = (arr) => {
 
   // adding each user's scores to the result
   arr.forEach((u) => {
-    const logger = u.name === "joe";
-
     for (let i = 1; i <= 8; i++) {
       const userWineNum = i;
       const userWineAnswer = u[`wine${userWineNum}`];
@@ -163,6 +163,16 @@ const convertNumToDropdownOption = (num) => {
   return { value: num, label: num };
 };
 
+const findUserScores = (user) => {
+  return wineNums.map((num) => user[`wine${num}`]["score"]);
+};
+
+const userSubmittedAllScores = (user) => {
+  const userScores = findUserScores(user);
+
+  return !userScores.includes(null);
+};
+
 module.exports = {
   findJoe,
   cap1stLetter,
@@ -174,4 +184,6 @@ module.exports = {
   trimNotes,
   findWine,
   convertNumToDropdownOption,
+  findUserScores,
+  userSubmittedAllScores,
 };

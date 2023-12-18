@@ -7,21 +7,10 @@ import Pre_Sign_In_Page from "./components/PreSignIn/Pre_Sign_In_Page";
 import Sign_In_Page from "./components/UserAccount/SignIn/Sign_In_Page";
 import Create_Account_Page from "./components/UserAccount/CreateAccount/Create_Account_Page";
 import Action_Confirmation from "./components/UserAccount/Action_Confirmation";
-import Home from "./components/home/Home";
+import Rank_Wines from "./components/rank_wines/Rank_Wines";
 import Single_Wine_Page from "./components/single_wine_page/Single_Wine_Page";
 import Admin from "./components/admin/Admin";
-// import Leaderboard_Page from "./components/leaderboard/Leaderboard_Page";
-// import Group_Details_Page from "./components/group_details/Group_Details_Page";
-// import Rules_Page from "./components/rules/Rules_Page";
-// import My_Picks_Locked_Page from "./components/my_picks/locked/My_Picks_Locked_Page";
-// import My_Picks_Unlocked_Page from "./components/my_picks/unlocked/My_Picks_Unlocked_Page";
-// import Pool_Picks_Page from "./components/pool_picks/Pool_Picks_Page";
-// import User_Profile_Page_L from "./components/UserAccount/UserProfile/Locked/User_Profile_Page_L";
-// import User_Profile_Page_UL from "./components/UserAccount/UserProfile/UnLocked/User_Profile_Page_UL";
-// import User_Admin_Page from "./components/admin/user/User_Admin_Page";
-// import Group_Admin_Page from "./components/admin/group/Group_Admin_Page";
-// import KO_Admin_Page from "./components/admin/ko/KO_Admin_Page";
-// import Team_Admin_Page_D from "./components/admin/team-depricated/Team_Admin_Page_D";
+import Results from "./components/results/Results";
 import NoMatch from "./components/Misc/No_Match";
 
 const Routes = () => {
@@ -29,13 +18,9 @@ const Routes = () => {
 
   const user = useSelector((state) => state.auth);
 
-  // const joe = findJoe(useSelector((state) => state.users));
+  const joe = findJoe(useSelector((state) => state.users));
 
   const [loading, setLoading] = useState(true);
-
-  // useEffect(() => {
-  //   dispatch(me());
-  // }, []);
 
   setTimeout(() => {
     setLoading(false);
@@ -70,15 +55,15 @@ const Routes = () => {
         <Route key={idx} path={route.path} exact component={route.component} />
       ))}
 
-      {/* <Route path="/rules" exact component={Rules_Page} /> */}
-
       {user?.id && (
         <Route exact path="/">
-          <Redirect to="/home" />
+          <Redirect to={`/${joe.stage === 0 ? "rank_wines" : "home"}`} />
         </Route>
       )}
 
-      <Route path="/home">{!user?.id ? <Redirect to="/" /> : <Home />}</Route>
+      <Route path="/rank_wines">
+        {!user?.id ? <Redirect to="/" /> : <Rank_Wines />}
+      </Route>
 
       <Route path="/rank/:id">
         {!user?.id ? <Redirect to="/" /> : <Single_Wine_Page />}
@@ -95,6 +80,10 @@ const Routes = () => {
           {!user?.id ? <Redirect to="/" /> : <Admin />}
         </Route>
       )}
+
+      <Route path="/results">
+        {!user?.id ? <Redirect to="/" /> : <Results />}
+      </Route>
 
       {/* 
 

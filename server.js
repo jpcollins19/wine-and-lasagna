@@ -1,22 +1,7 @@
 //////////////////css////////////////// ---START
 
-////admin page ---START
-///stage 0 --START
-
-//shows each user and a red x or green checkmark based on their wine rank submission
-//can click on a user to edit their pw and stage
-
-//cannot change to stage 1 until all users submit their answers
-
-///stage 0 --END
-
-//add an admin page w the ability to update the name of the wine
-
-////admin page ---END
-
 /////////stage 1-8 --- on stage 1///////// ---START
 ////zoomed out view ---START
-///copy/paste all these steps below for the next stage
 
 //only shows the first wine and it's rank
 //columns for: rank, wine #, wine name, and total score - ordered by total score, if there is a tie, wine # is next order
@@ -36,6 +21,29 @@
 ////zoomed in view ---END
 
 /////////stage 1-8 --- on stage 1///////// ---END
+
+/////////stage 1-8 --- on stage 2///////// ---START
+////zoomed out view ---START
+///copy/paste all these steps below for the next stage
+
+//only shows the second wine and it's rank
+//columns for: rank, wine #, wine name, and total score - ordered by total score, if there is a tie, wine # is next order
+//view wine info by clicking on the wine's row - then it goes to zoomed in view
+
+////zoomed out view ---END
+
+////zoomed in view ---START
+//shows the wine # and name at the top
+//shows each user and their rank of the wine, ranked by highest to lowest
+//each users row has: their name, rank, and notes
+
+////verify that admin still works
+//you can change the name of each wine
+//you can submit to next stage, or change someones pw
+
+////zoomed in view ---END
+
+/////////stage 1-8 --- on stage 2///////// ---END
 
 //////////////////css////////////////// ---END
 

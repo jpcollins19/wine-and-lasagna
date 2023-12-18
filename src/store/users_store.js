@@ -52,11 +52,13 @@ export const loadUsers = () => {
   };
 };
 
-export const updateUser = (user, history) => {
+export const updateUser = (user, history, isAdmin = false) => {
   return async (dispatch) => {
     user = (await axios.put(`/api/users/${user.id}`, user)).data;
 
-    history.push("/home");
+    const path = isAdmin ? "results" : "rank_wines";
+
+    history.push(`/${path}`);
   };
 };
 

@@ -14,3 +14,4 @@ export * from "./auth_store";
 export * from "./users_store";
 export * from "./wines_store";
 export * from "./funcs";
+export * from "./global_variables";

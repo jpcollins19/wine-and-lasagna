@@ -5,6 +5,8 @@ const {
   calcWineScores,
   trimNotes,
   findWine,
+  findUserScores,
+  userSubmittedAllScores,
 } = require("./src/store/funcs");
 
 describe("func testing", () => {
@@ -933,6 +935,136 @@ describe("func testing", () => {
         expect(result.id).to.equal(test.resultId);
         expect(result.number).to.equal(test.resultNumber);
         expect(result.name).to.equal(test.resultName);
+      });
+    });
+  });
+
+  describe("findUserScores", () => {
+    const joe = {
+      id: "0ffe522f-aed4-4e50-a6ac-3785e0d7190c",
+      email: "joe@gmail.com",
+      name: "joe",
+      admin: true,
+      stage: 1,
+      wine1: { score: 4, notes: null },
+      wine2: { score: 4.5, notes: null },
+      wine3: { score: 3.5, notes: null },
+      wine4: { score: 1.5, notes: null },
+      wine5: { score: 3, notes: null },
+      wine6: { score: 4.5, notes: null },
+      wine7: { score: 3, notes: null },
+      wine8: { score: 2, notes: null },
+    };
+
+    const kelly = {
+      id: "22bc9da5-ab40-450e-adf4-2fcbbf6ad762",
+      email: "kelly@gmail.com",
+      name: "kelly",
+      admin: false,
+      stage: 1,
+      wine1: { score: 5, notes: null },
+      wine2: { score: 5, notes: null },
+      wine3: { score: 3.5, notes: null },
+      wine4: { score: 1.5, notes: null },
+      wine5: { score: 3, notes: null },
+      wine6: { score: 4.5, notes: null },
+      wine7: { score: 3, notes: null },
+      wine8: { score: 2, notes: null },
+    };
+
+    const dalton = {
+      id: "35be5ddf-683f-4482-995a-ac89fd573923",
+      email: "dalton@gmail.com",
+      name: "dalton",
+      admin: false,
+      stage: 1,
+      wine1: { score: 5, notes: null },
+      wine2: { score: 4.5, notes: null },
+      wine3: { score: 3.5, notes: null },
+      wine4: { score: 1.5, notes: null },
+      wine5: { score: 3, notes: null },
+      wine6: { score: 4.5, notes: null },
+      wine7: { score: 3, notes: null },
+      wine8: { score: null, notes: null },
+    };
+
+    const findUserScoresTesting = [
+      { user: joe, result: [4, 4.5, 3.5, 1.5, 3, 4.5, 3, 2] },
+      { user: kelly, result: [5, 5, 3.5, 1.5, 3, 4.5, 3, 2] },
+      { user: dalton, result: [5, 4.5, 3.5, 1.5, 3, 4.5, 3, null] },
+    ];
+
+    findUserScoresTesting.forEach((test) => {
+      it(`${test.user}`, () => {
+        const result = findUserScores(test.user);
+
+        for (let i = 0; i < 8; i++) {
+          expect(result[i]).to.equal(test.result[i]);
+        }
+      });
+    });
+  });
+
+  describe("userSubmittedAllScores", () => {
+    const joe = {
+      id: "0ffe522f-aed4-4e50-a6ac-3785e0d7190c",
+      email: "joe@gmail.com",
+      name: "joe",
+      admin: true,
+      stage: 1,
+      wine1: { score: 4, notes: null },
+      wine2: { score: 4.5, notes: null },
+      wine3: { score: 3.5, notes: null },
+      wine4: { score: 1.5, notes: null },
+      wine5: { score: 3, notes: null },
+      wine6: { score: 4.5, notes: null },
+      wine7: { score: 3, notes: null },
+      wine8: { score: 2, notes: null },
+    };
+
+    const kelly = {
+      id: "22bc9da5-ab40-450e-adf4-2fcbbf6ad762",
+      email: "kelly@gmail.com",
+      name: "kelly",
+      admin: false,
+      stage: 1,
+      wine1: { score: 5, notes: null },
+      wine2: { score: 5, notes: null },
+      wine3: { score: 3.5, notes: null },
+      wine4: { score: 1.5, notes: null },
+      wine5: { score: 3, notes: null },
+      wine6: { score: 4.5, notes: null },
+      wine7: { score: 3, notes: null },
+      wine8: { score: 2, notes: null },
+    };
+
+    const dalton = {
+      id: "35be5ddf-683f-4482-995a-ac89fd573923",
+      email: "dalton@gmail.com",
+      name: "dalton",
+      admin: false,
+      stage: 1,
+      wine1: { score: 5, notes: null },
+      wine2: { score: 4.5, notes: null },
+      wine3: { score: 3.5, notes: null },
+      wine4: { score: 1.5, notes: null },
+      wine5: { score: 3, notes: null },
+      wine6: { score: 4.5, notes: null },
+      wine7: { score: 3, notes: null },
+      wine8: { score: null, notes: null },
+    };
+
+    const userSubmittedAllScoresTesting = [
+      { user: joe, result: true },
+      { user: kelly, result: true },
+      { user: dalton, result: false },
+    ];
+
+    userSubmittedAllScoresTesting.forEach((test) => {
+      it(`${test.user}`, () => {
+        const result = userSubmittedAllScores(test.user);
+
+        expect(result).to.equal(test.result);
       });
     });
   });

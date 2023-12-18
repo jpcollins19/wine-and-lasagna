@@ -157,7 +157,7 @@ const users = [
     score5: 3,
     score6: 4.5,
     score7: 3,
-    score8: 2,
+    // score8: 2,
     notes1: null,
     notes2: null,
     notes3: null,
@@ -192,15 +192,26 @@ const users = [
   },
 ];
 
+// const wines = [
+//   { number: 1 name: "wineNameJoe"},
+//   { number: 2, name: "wineNameKelly" },
+//   { number: 3, name: "wineNameDalton" },
+//   { number: 4, name: "wineNameNicole" },
+//   { number: 5, name: "wineNamePolizzi" },
+//   { number: 6, name: "wineNameKatie" },
+//   { number: 7, name: "wineNameMatt" },
+//   { number: 8, name: "wineNameAmber" },
+// ];
+
 const wines = [
-  { number: 1, name: "wineNameJoe" },
-  { number: 2, name: "wineNameKelly" },
-  { number: 3, name: "wineNameDalton" },
-  { number: 4, name: "wineNameNicole" },
-  { number: 5, name: "wineNamePolizzi" },
-  { number: 6, name: "wineNameKatie" },
-  { number: 7, name: "wineNameMatt" },
-  { number: 8, name: null },
+  { number: 1 },
+  { number: 2 },
+  { number: 3 },
+  { number: 4 },
+  { number: 5 },
+  { number: 6 },
+  { number: 7 },
+  { number: 8 },
 ];
 
 const syncAndSeed = async () => {
