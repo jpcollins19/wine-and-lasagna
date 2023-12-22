@@ -8,14 +8,13 @@ import Sign_In_Page from "./components/UserAccount/SignIn/Sign_In_Page";
 import Create_Account_Page from "./components/UserAccount/CreateAccount/Create_Account_Page";
 import Action_Confirmation from "./components/UserAccount/Action_Confirmation";
 import Rank_Wines from "./components/rank_wines/Rank_Wines";
-import Single_Wine_Page from "./components/single_wine_page/Single_Wine_Page";
+import Single_Wine_Rank from "./components/rank_wines/single_wine_rank/Single_Wine_Rank";
 import Admin from "./components/admin/Admin";
 import Results from "./components/results/Results";
+import Single_Result from "./components/results/single_result_page/Single_Result";
 import NoMatch from "./components/Misc/No_Match";
 
 const Routes = () => {
-  const dispatch = useDispatch();
-
   const user = useSelector((state) => state.auth);
 
   const joe = findJoe(useSelector((state) => state.users));
@@ -61,12 +60,12 @@ const Routes = () => {
         </Route>
       )}
 
-      <Route path="/rank_wines">
+      <Route exact path="/rank_wines">
         {!user?.id ? <Redirect to="/" /> : <Rank_Wines />}
       </Route>
 
       <Route path="/rank/:id">
-        {!user?.id ? <Redirect to="/" /> : <Single_Wine_Page />}
+        {!user?.id ? <Redirect to="/" /> : <Single_Wine_Rank />}
       </Route>
 
       {user?.isAdmin && (
@@ -81,8 +80,12 @@ const Routes = () => {
         </Route>
       )}
 
-      <Route path="/results">
+      <Route exact path="/results">
         {!user?.id ? <Redirect to="/" /> : <Results />}
+      </Route>
+
+      <Route path="/results/:id">
+        {!user?.id ? <Redirect to="/" /> : <Single_Result />}
       </Route>
 
       {/* 

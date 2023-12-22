@@ -11,6 +11,17 @@ const {
 
 describe("func testing", () => {
   describe("calcWineScores", () => {
+    const wines = [
+      { number: 1, name: "wineNameJoe" },
+      { number: 2, name: "wineNameKelly" },
+      { number: 3, name: "wineNameDalton" },
+      { number: 4, name: "wineNameNicole" },
+      { number: 5, name: "wineNamePolizzi" },
+      { number: 6, name: "wineNameKatie" },
+      { number: 7, name: "wineNameMatt" },
+      { number: 8, name: "wineNameAmber" },
+    ];
+
     describe(`with no ties`, () => {
       const joe = {
         id: "0ffe522f-aed4-4e50-a6ac-3785e0d7190c",
@@ -143,31 +154,55 @@ describe("func testing", () => {
       users = [joe, kelly, dalton, nicole, polizzi, katie, matt, amber];
 
       const calcWineScoresTesting = [
-        { wineNum: 6, rank: 1, score: 36 },
-        { wineNum: 1, rank: 2, score: 34 },
-        { wineNum: 2, rank: 3, score: 33.5 },
-        { wineNum: 3, rank: 4, score: 25 },
-        { wineNum: 5, rank: 5, score: 24 },
-        { wineNum: 7, rank: 6, score: 22.5 },
-        { wineNum: 8, rank: 7, score: 18.5 },
-        { wineNum: 4, rank: 8, score: 12 },
+        { wineNum: 6, rank: 1, score: 36, name: "wineNameKatie", ave: "4.50" },
+        { wineNum: 1, rank: 2, score: 34, name: "wineNameJoe", ave: "4.25" },
+        {
+          wineNum: 2,
+          rank: 3,
+          score: 33.5,
+          name: "wineNameKelly",
+          ave: "4.19",
+        },
+        { wineNum: 3, rank: 4, score: 25, name: "wineNameDalton", ave: "3.13" },
+        {
+          wineNum: 5,
+          rank: 5,
+          score: 24,
+          name: "wineNamePolizzi",
+          ave: "3.00",
+        },
+        { wineNum: 7, rank: 6, score: 22.5, name: "wineNameMatt", ave: "2.81" },
+        {
+          wineNum: 8,
+          rank: 7,
+          score: 18.5,
+          name: "wineNameAmber",
+          ave: "2.31",
+        },
+        { wineNum: 4, rank: 8, score: 12, name: "wineNameNicole", ave: "1.50" },
       ];
 
       calcWineScoresTesting.forEach((entry, i) => {
         const wineNumCorrect = entry.wineNum;
         const wineRankCorrect = entry.rank;
         const wineScoreCorrect = entry.score;
+        const wineNameCorrect = entry.name;
+        const wineAveCorrect = entry.ave;
 
         it(`wine #${wineNumCorrect}`, () => {
-          const result = calcWineScores(users);
+          const result = calcWineScores(users, wines);
           const wineIndexResult = result[i];
           const wineNumResult = wineIndexResult.wineNum;
           const wineRankResult = wineIndexResult.rank;
           const wineScoreResult = wineIndexResult.score;
+          const wineNameResult = wineIndexResult.name;
+          const wineAveResult = wineIndexResult.ave;
 
           expect(wineNumResult).to.equal(wineNumCorrect);
           expect(wineRankResult).to.equal(wineRankCorrect);
           expect(wineScoreResult).to.equal(wineScoreCorrect);
+          expect(wineNameResult).to.equal(wineNameCorrect);
+          expect(wineAveResult).to.equal(wineAveCorrect);
         });
       });
     });
@@ -309,31 +344,55 @@ describe("func testing", () => {
       });
 
       const calcWineScoresTesting = [
-        { wineNum: 6, rank: 1, score: 36 },
-        { wineNum: 1, rank: 2, score: 34 },
-        { wineNum: 2, rank: 3, score: 33.5 },
-        { wineNum: 5, rank: 4, score: 24 },
-        { wineNum: 8, rank: 5, score: 18.5 },
-        { wineNum: 3, rank: 6, score: 16 },
-        { wineNum: 7, rank: 7, score: 16 },
-        { wineNum: 4, rank: 8, score: 12 },
+        { wineNum: 6, rank: 1, score: 36, name: "wineNameKatie", ave: "4.50" },
+        { wineNum: 1, rank: 2, score: 34, name: "wineNameJoe", ave: "4.25" },
+        {
+          wineNum: 2,
+          rank: 3,
+          score: 33.5,
+          name: "wineNameKelly",
+          ave: "4.19",
+        },
+        {
+          wineNum: 5,
+          rank: 4,
+          score: 24,
+          name: "wineNamePolizzi",
+          ave: "3.00",
+        },
+        {
+          wineNum: 8,
+          rank: 5,
+          score: 18.5,
+          name: "wineNameAmber",
+          ave: "2.31",
+        },
+        { wineNum: 3, rank: 6, score: 16, name: "wineNameDalton", ave: "2.00" },
+        { wineNum: 7, rank: 7, score: 16, name: "wineNameMatt", ave: "2.00" },
+        { wineNum: 4, rank: 8, score: 12, name: "wineNameNicole", ave: "1.50" },
       ];
 
       calcWineScoresTesting.forEach((entry, i) => {
         const wineNumCorrect = entry.wineNum;
         const wineRankCorrect = entry.rank;
         const wineScoreCorrect = entry.score;
+        const wineNameCorrect = entry.name;
+        const wineAveCorrect = entry.ave;
 
         it(`wine #${wineNumCorrect}`, () => {
-          const result = calcWineScores(users);
+          const result = calcWineScores(users, wines);
           const wineIndexResult = result[i];
           const wineNumResult = wineIndexResult.wineNum;
           const wineRankResult = wineIndexResult.rank;
           const wineScoreResult = wineIndexResult.score;
+          const wineNameResult = wineIndexResult.name;
+          const wineAveResult = wineIndexResult.ave;
 
           expect(wineNumResult).to.equal(wineNumCorrect);
           expect(wineRankResult).to.equal(wineRankCorrect);
           expect(wineScoreResult).to.equal(wineScoreCorrect);
+          expect(wineNameResult).to.equal(wineNameCorrect);
+          expect(wineAveResult).to.equal(wineAveCorrect);
         });
       });
     });
@@ -476,31 +535,55 @@ describe("func testing", () => {
       });
 
       const calcWineScoresTesting = [
-        { wineNum: 6, rank: 1, score: 36 },
-        { wineNum: 2, rank: 2, score: 33.5 },
-        { wineNum: 3, rank: 3, score: 25 },
-        { wineNum: 5, rank: 4, score: 24 },
-        { wineNum: 1, rank: 5, score: 20 },
-        { wineNum: 4, rank: 6, score: 20 },
-        { wineNum: 7, rank: 7, score: 20 },
-        { wineNum: 8, rank: 8, score: 18.5 },
+        { wineNum: 6, rank: 1, score: 36, name: "wineNameKatie", ave: "4.50" },
+        {
+          wineNum: 2,
+          rank: 2,
+          score: 33.5,
+          name: "wineNameKelly",
+          ave: "4.19",
+        },
+        { wineNum: 3, rank: 3, score: 25, name: "wineNameDalton", ave: "3.13" },
+        {
+          wineNum: 5,
+          rank: 4,
+          score: 24,
+          name: "wineNamePolizzi",
+          ave: "3.00",
+        },
+        { wineNum: 1, rank: 5, score: 20, name: "wineNameJoe", ave: "2.50" },
+        { wineNum: 4, rank: 6, score: 20, name: "wineNameNicole", ave: "2.50" },
+        { wineNum: 7, rank: 7, score: 20, name: "wineNameMatt", ave: "2.50" },
+        {
+          wineNum: 8,
+          rank: 8,
+          score: 18.5,
+          name: "wineNameAmber",
+          ave: "2.31",
+        },
       ];
 
       calcWineScoresTesting.forEach((entry, i) => {
         const wineNumCorrect = entry.wineNum;
         const wineRankCorrect = entry.rank;
         const wineScoreCorrect = entry.score;
+        const wineNameCorrect = entry.name;
+        const wineAveCorrect = entry.ave;
 
         it(`wine #${wineNumCorrect}`, () => {
-          const result = calcWineScores(users);
+          const result = calcWineScores(users, wines);
           const wineIndexResult = result[i];
           const wineNumResult = wineIndexResult.wineNum;
           const wineRankResult = wineIndexResult.rank;
           const wineScoreResult = wineIndexResult.score;
+          const wineNameResult = wineIndexResult.name;
+          const wineAveResult = wineIndexResult.ave;
 
           expect(wineNumResult).to.equal(wineNumCorrect);
           expect(wineRankResult).to.equal(wineRankCorrect);
           expect(wineScoreResult).to.equal(wineScoreCorrect);
+          expect(wineNameResult).to.equal(wineNameCorrect);
+          expect(wineAveResult).to.equal(wineAveCorrect);
         });
       });
     });
@@ -644,31 +727,49 @@ describe("func testing", () => {
       });
 
       const calcWineScoresTesting = [
-        { wineNum: 2, rank: 1, score: 40 },
-        { wineNum: 5, rank: 2, score: 40 },
-        { wineNum: 6, rank: 3, score: 36 },
-        { wineNum: 3, rank: 4, score: 25 },
-        { wineNum: 7, rank: 5, score: 22.5 },
-        { wineNum: 8, rank: 6, score: 18.5 },
-        { wineNum: 1, rank: 7, score: 4 },
-        { wineNum: 4, rank: 8, score: 4 },
+        { wineNum: 2, rank: 1, score: 40, name: "wineNameKelly", ave: "5.00" },
+        {
+          wineNum: 5,
+          rank: 2,
+          score: 40,
+          name: "wineNamePolizzi",
+          ave: "5.00",
+        },
+        { wineNum: 6, rank: 3, score: 36, name: "wineNameKatie", ave: "4.50" },
+        { wineNum: 3, rank: 4, score: 25, name: "wineNameDalton", ave: "3.13" },
+        { wineNum: 7, rank: 5, score: 22.5, name: "wineNameMatt", ave: "2.81" },
+        {
+          wineNum: 8,
+          rank: 6,
+          score: 18.5,
+          name: "wineNameAmber",
+          ave: "2.31",
+        },
+        { wineNum: 1, rank: 7, score: 4, name: "wineNameJoe", ave: "0.50" },
+        { wineNum: 4, rank: 8, score: 4, name: "wineNameNicole", ave: "0.50" },
       ];
 
       calcWineScoresTesting.forEach((entry, i) => {
         const wineNumCorrect = entry.wineNum;
         const wineRankCorrect = entry.rank;
         const wineScoreCorrect = entry.score;
+        const wineNameCorrect = entry.name;
+        const wineAveCorrect = entry.ave;
 
         it(`wine #${wineNumCorrect}`, () => {
-          const result = calcWineScores(users);
+          const result = calcWineScores(users, wines);
           const wineIndexResult = result[i];
           const wineNumResult = wineIndexResult.wineNum;
           const wineRankResult = wineIndexResult.rank;
           const wineScoreResult = wineIndexResult.score;
+          const wineNameResult = wineIndexResult.name;
+          const wineAveResult = wineIndexResult.ave;
 
           expect(wineNumResult).to.equal(wineNumCorrect);
           expect(wineRankResult).to.equal(wineRankCorrect);
           expect(wineScoreResult).to.equal(wineScoreCorrect);
+          expect(wineNameResult).to.equal(wineNameCorrect);
+          expect(wineAveResult).to.equal(wineAveCorrect);
         });
       });
     });

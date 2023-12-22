@@ -49,26 +49,48 @@ const formatEmail = (email) => {
   return email;
 };
 
-const calcWineScores = (arr) => {
+const calcWineScores = (users, wines) => {
   const result = [];
 
   for (let i = 1; i <= 8; i++) {
-    result.push({ wineNum: i, rank: 0, score: 0 });
+    result.push({ wineNum: i, rank: 0, score: 0, userNotes: [] });
   }
 
+  wines.forEach((wine) => {
+    result.forEach((wineResult) => {
+      if (wine.number === wineResult.wineNum) {
+        wineResult.id = wine.id;
+        wineResult.name = wine.name;
+      }
+    });
+  });
+
   // adding each user's scores to the result
-  arr.forEach((u) => {
+  users.forEach((u) => {
     for (let i = 1; i <= 8; i++) {
       const userWineNum = i;
       const userWineAnswer = u[`wine${userWineNum}`];
 
       const userWineScore = userWineAnswer.score;
+      let userWineNotes = userWineAnswer.notes;
+
+      if (userWineNotes === null || !userWineNotes.length) {
+        userWineNotes = "----";
+      }
 
       result.forEach((resultWine) => {
         const resultWineNum = resultWine.wineNum;
 
         if (resultWineNum === userWineNum) {
           resultWine.score = resultWine.score + userWineScore;
+
+          const userObj = {
+            name: u.name,
+            score: userWineScore,
+            notes: userWineNotes,
+          };
+
+          resultWine.userNotes.push(userObj);
         }
       });
     }
@@ -77,12 +99,21 @@ const calcWineScores = (arr) => {
   //ordering the wines based on total score
   result.sort((a, b) => b.score - a.score);
 
+  //ordering the userNotes based on wineRank
+  result.forEach((wine) => {
+    wine.userNotes.sort((a, b) => b.score - a.score);
+  });
+
   let rank = 1;
 
   //ranking wines based on prior ordering
   result.forEach((wine) => {
     wine.rank = rank;
     rank++;
+
+    const ave = wine.score / 8;
+
+    wine.ave = ave.toFixed(2);
   });
 
   return result;
@@ -173,6 +204,18 @@ const userSubmittedAllScores = (user) => {
   return !userScores.includes(null);
 };
 
+const getCurrentWineRankData = (users, wines, joe) => {
+  let rankInfo = calcWineScores(users, wines);
+
+  rankInfo = rankInfo.filter((wine) => wine.wineNum <= joe.stage);
+
+  let rank = 1;
+
+  rankInfo.forEach((wine) => (wine.rank = rank++));
+
+  return rankInfo;
+};
+
 module.exports = {
   findJoe,
   cap1stLetter,
@@ -186,4 +229,5 @@ module.exports = {
   convertNumToDropdownOption,
   findUserScores,
   userSubmittedAllScores,
+  getCurrentWineRankData,
 };
