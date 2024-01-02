@@ -1,8 +1,5 @@
 ////feature testing ----START
 
-///action confirmation page work
-//account-created
-
 ///no match page work
 ////feature testing ----END
 
@@ -14,9 +11,6 @@ const path = require("path");
 app.use(express.json());
 
 app.use("/dist", express.static(path.join(__dirname, "dist")));
-
-// app.use("/public/css", express.static(path.join(__dirname, "public/css")));
-// app.use("/public/pics", express.static(path.join(__dirname, "public/pics")));
 
 app.use("/", require("./server/api/wines.js"));
 app.use("/", require("./server/api/users.js"));
