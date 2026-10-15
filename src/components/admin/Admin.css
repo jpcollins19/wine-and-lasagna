@@ -1,0 +1,173 @@
+@media (max-width: 65em) {
+  #admin-page-submit {
+    overflow: auto;
+    height: 85vh;
+  }
+
+  .admin-page-users {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .admin-user-cont-out {
+    margin-bottom: 50px;
+    border: solid 2px white;
+    width: 70vw;
+  }
+
+  .admin-user-cont-in {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5rem;
+    height: 100%;
+  }
+
+  .white-text {
+    margin: 0;
+    text-align: center;
+    text-shadow: 2px 2px black;
+    color: white;
+  }
+
+  .user-name-cont {
+    font-size: 100px;
+  }
+
+  .admin-button {
+    padding: 10% 0 15% 0;
+  }
+
+  .admin-button button {
+    height: 250%;
+    width: 50%;
+    font-size: 200%;
+  }
+
+  .admin-button-delete {
+    padding-top: 40%;
+  }
+
+  .admin-button-delete button {
+    height: 250%;
+    width: 120%;
+    font-size: 200%;
+  }
+
+  .data-cont-admin-user {
+    display: flex;
+    align-items: center;
+    height: 5vh;
+  }
+
+  .data-cont-admin-user > div {
+    display: flex;
+    justify-content: end;
+    font-size: 40px;
+  }
+
+  .data-cont-admin-user > input {
+    background: transparent;
+    font-size: 30px;
+    text-align: center;
+    border: solid 2px white;
+    margin-left: 2%;
+    width: 40vw;
+    height: 4vh;
+  }
+
+  .dcau-input {
+    width: 10vw;
+  }
+
+  .user-name-admin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: solid 2px white;
+    font-size: 300%;
+  }
+
+  .not-submitted {
+    color: red;
+  }
+
+  .wine-cont-admin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    margin: 20px 0 20px 0;
+  }
+
+  .wine-num-admin {
+    font-size: 170%;
+    padding-right: 5px;
+  }
+
+  .admin-page-wines {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 85vh;
+  }
+
+  .admin-wine-cont-out {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px white;
+    font-size: 200%;
+    margin: 50px;
+    min-width: 30vw;
+    max-width: 30vw;
+    min-height: 20vw;
+    max-height: 20vw;
+  }
+
+  .wine-table-admin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+  }
+
+  .admin-wine-cont-in {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: 5rem;
+    height: 30%;
+  }
+
+  .wine-num-cont {
+    font-size: 300%;
+  }
+
+  .data-cont-admin-wine {
+    display: flex;
+    align-items: center;
+    height: 5vh;
+  }
+
+  .data-cont-admin-wine > div {
+    display: flex;
+    justify-content: end;
+    font-size: 40px;
+  }
+
+  .data-cont-admin-wine > input {
+    background: transparent;
+    font-size: 30px;
+    text-align: center;
+    border: solid 2px white;
+    margin-left: 2%;
+    width: 40vw;
+    height: 4vh;
+  }
+}

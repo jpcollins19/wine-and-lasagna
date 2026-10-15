@@ -1,0 +1,10 @@
+@media (max-width: 65em) {
+  .wine-glass-pre-sign-in {
+    background-size: cover;
+    background-color: red;
+    background-image: url("/public/pics/pre-sign-in.jpg");
+    height: 89vh;
+    width: 100vw;
+    background-position: center;
+  }
+}

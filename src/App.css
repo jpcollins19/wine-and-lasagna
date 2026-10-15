@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+}
+
+.routes-cont {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 84vh;
+  width: 100vw;
+  background: linear-gradient(
+    to bottom right,
+    purple 0%,
+    rgb(100, 4, 100) 25%,
+    purple 50%,
+    rgb(100, 4, 100) 75%,
+    purple 100%
+  );
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: default;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom right, #485563 0%, #29323c 100%);
+}
+
+::-webkit-scrollbar {
+  width: 0.6rem;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem;
+}
+
+@media (max-width: 65em) {
+  .routes-cont {
+    min-height: 89vh;
+    max-height: 89vh;
+  }
+
+  .routes-cont > div {
+    height: 89vh;
+  }
+}

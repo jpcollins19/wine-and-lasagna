@@ -1,0 +1,56 @@
+@media (max-width: 65em) {
+  .rank-wines-table {
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 50px;
+    height: 85vh;
+  }
+
+  .column-cont > h1 {
+    font-size: 320%;
+  }
+
+  .column-cont > a {
+    text-decoration: none;
+  }
+
+  .cc-wine {
+    width: 20vw;
+  }
+
+  .cc-score {
+    width: 20vw;
+  }
+
+  .cc-notes {
+    width: 50vw;
+    overflow: auto;
+  }
+
+  .cc-wine > a {
+    font-size: 200%;
+  }
+
+  .cc-score > a {
+    font-size: 200%;
+  }
+
+  .cc-notes > a {
+    font-size: 150%;
+    padding: 5px;
+  }
+
+  .input-cont {
+    border: solid 2px rgb(212, 204, 204);
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .missing-score {
+    color: rgb(2, 247, 227);
+    font-weight: bold;
+  }
+}

@@ -3,7 +3,6 @@ const {
   models: { User, Wine },
 } = require("../db/index.js");
 
-//test
 const users = [
   {
     email: "joe@gmail.com",

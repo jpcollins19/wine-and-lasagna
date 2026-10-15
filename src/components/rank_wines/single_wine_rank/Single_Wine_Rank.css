@@ -1,0 +1,54 @@
+@media (max-width: 65em) {
+  .single-wine-table {
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 50px;
+    height: 85vh;
+  }
+
+  .rank-wine-table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+  }
+
+  .rank-wine-table > h1 {
+    font-size: 500%;
+    margin: 2% 0 2% 0;
+  }
+
+  .rank-wine-table > h2 {
+    font-size: 300%;
+    margin-bottom: 0;
+  }
+  .rank-wine-button button {
+    width: 20%;
+    font-size: 200%;
+  }
+
+  .user-notes {
+    margin-top: 10%;
+    width: 70vw;
+    height: 30vh;
+    font-size: 200%;
+  }
+
+  .must-score-wine-text {
+    background-color: rgb(248, 219, 219);
+    color: rgb(146, 65, 65);
+    text-align: center;
+    margin: 25% 0 0 0;
+    min-width: 70%;
+    height: 5rem;
+  }
+
+  .must-score-wine-text > div > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2rem;
+    width: 90%;
+  }
+}

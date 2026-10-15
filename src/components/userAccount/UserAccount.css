@@ -1,0 +1,252 @@
+/*///////////////////////*/
+/*/ ///////Sign In////////*/
+/*///////////////////////*/
+
+.toaster-invalid-credentials {
+  background-color: rgb(248, 219, 219);
+  color: rgb(146, 65, 65);
+  margin: 10.75% 0 0 0%;
+  display: flex;
+}
+
+.toaster-invalid-credentials > div > div {
+  display: flex;
+  align-items: center;
+  width: 20rem;
+  height: 2rem;
+}
+
+.sign-in-text-cont {
+  min-width: 60%;
+}
+
+@media (max-width: 65em) {
+  .sign-in-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sign-in-cont-outside {
+    border-radius: 1rem;
+    padding: 1rem;
+    background: white;
+    height: 60rem;
+    width: 50rem;
+    margin-top: 30%;
+  }
+
+  .sign-in-cont-inside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 1rem;
+    padding: 1rem;
+    height: 58rem;
+    background: linear-gradient(
+      to bottom right,
+      rgb(237, 140, 237) 0%,
+      rgb(180, 109, 180) 25%,
+      rgb(205, 101, 205) 50%,
+      rgb(180, 109, 180) 75%,
+      rgb(237, 140, 237) 100%
+    );
+  }
+
+  .sign-in-text-cont {
+    max-width: 60%;
+  }
+
+  .sign-in-text-cont > h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 400%;
+    padding: 2% 0 7% 0;
+  }
+
+  .sign-in-text-cont div {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1%;
+    font-size: 200%;
+  }
+
+  .view-pw {
+    margin: 10px 0px 0px 0px;
+    font-size: 1rem;
+    text-align: center;
+    text-shadow: none;
+    cursor: pointer;
+  }
+
+  .sign-in-button {
+    padding: 10% 0 15% 0;
+  }
+
+  .sign-in-button button {
+    height: 250%;
+    width: 50%;
+    font-size: 70%;
+  }
+
+  .option-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  .option-cont > h4 {
+    margin-right: 4px;
+    margin: 0;
+  }
+
+  .option-cont > a {
+    text-decoration: none;
+    color: blue;
+    min-width: 40%;
+  }
+
+  .option-cont > a > h4 {
+    margin: 0;
+    text-align: center;
+  }
+
+  .create-account-sign-in {
+    padding-right: 3px;
+  }
+
+  .toaster-invalid-credentials {
+    margin: 30% 0 0 1%;
+    min-width: 70%;
+    height: 5rem;
+  }
+
+  .toaster-invalid-credentials > div > div {
+    width: 90%;
+  }
+
+  .invalid-credentials-text {
+    font-size: 200%;
+    min-width: 200%;
+  }
+}
+
+/*/ //////////////////////*/
+/*/////Create Account/////*/
+/*/ //////////////////////*/
+
+.create-account-text-cont {
+  min-width: 60%;
+}
+
+@media (max-width: 65em) {
+  .create-account-cont-outside {
+    border-radius: 1rem;
+    padding: 1rem;
+    background: white;
+    height: 67rem;
+    width: 50rem;
+    margin-top: 30%;
+  }
+
+  .create-account-cont-inside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 1rem;
+    padding: 1rem;
+    height: 65rem;
+    background: linear-gradient(
+      to bottom right,
+      rgb(237, 140, 237) 0%,
+      rgb(180, 109, 180) 25%,
+      rgb(205, 101, 205) 50%,
+      rgb(180, 109, 180) 75%,
+      rgb(237, 140, 237) 100%
+    );
+  }
+
+  .create-account-text-cont {
+    max-width: 60%;
+  }
+
+  .create-account-text-cont > h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 350%;
+    padding: 2% 0 7% 0;
+  }
+
+  .create-account-text-cont div {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1%;
+    font-size: 200%;
+  }
+
+  .create-account-button {
+    padding: 10% 0 15% 0;
+  }
+
+  .create-account-button button {
+    height: 250%;
+    width: 90%;
+    font-size: 70%;
+  }
+
+  .toaster-error-create-account {
+    background-color: rgb(248, 219, 219);
+    color: rgb(146, 65, 65);
+    text-align: center;
+    margin: 30% 0 0 0;
+    min-width: 70%;
+    height: 5rem;
+  }
+
+  .toaster-error-create-account > div > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2rem;
+    width: 90%;
+  }
+}
+
+/*///////////////////////*/
+/*/ ///Action Confirmation////*/
+/*///////////////////////*/
+
+@media (max-width: 65em) {
+  .action-confirm-page {
+    display: flex;
+    align-items: end;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 200px;
+    height: 85vh;
+    background-image: url("/public/pics/account-created.jpg");
+    background-size: cover;
+  }
+
+  .action-confirm-page > h1 {
+    font-size: 400%;
+    width: 70%;
+    padding-top: 10%;
+  }
+
+  .click-to-sign-in {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 7%;
+  }
+
+  .click-to-sign-in > a {
+    color: white;
+    text-decoration: none;
+    font-size: 220%;
+    margin-right: 200px;
+  }
+}

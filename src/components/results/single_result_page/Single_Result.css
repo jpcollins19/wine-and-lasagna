@@ -1,0 +1,69 @@
+@media (max-width: 65em) {
+  .single-wine-result-page {
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: auto;
+    margin-bottom: 40px;
+  }
+
+  .single-wine-result-table > h1 {
+    font-size: 320%;
+  }
+
+  .wine-result-scores-table {
+    display: flex;
+    justify-content: space-around;
+    font-size: 300%;
+    margin-bottom: 50px;
+  }
+
+  .wine-result-scores-table > div {
+    display: flex;
+  }
+
+  .wine-result-scores-table > div > .key {
+    font-weight: bold;
+    padding-right: 10px;
+  }
+
+  .single-wine-result-table > a {
+    font-size: 220%;
+    color: white;
+    text-decoration: none;
+  }
+
+  .user-result-table {
+    border: solid 2px white;
+    min-width: 95vw;
+    max-width: 95vw;
+    margin-top: 50px;
+  }
+
+  .user-result-row {
+    display: flex;
+  }
+
+  .user-result-row > div {
+    border: solid 2px white;
+  }
+
+  .user-result-sm {
+    display: flex;
+    flex: 0.2;
+    align-items: center;
+    justify-content: center;
+    font-size: 200%;
+    padding: 10px 0 10px 0;
+  }
+
+  .user-result-big {
+    display: flex;
+    flex: 0.6;
+    align-items: center;
+    justify-content: start;
+    text-align: left;
+    font-size: 150%;
+    padding: 10px 0 10px 10px;
+  }
+}
