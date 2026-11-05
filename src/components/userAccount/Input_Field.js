@@ -1,18 +1,6 @@
-import { makeStyles } from "@material-ui/core/styles";
-import { radioClasses } from "@mui/material";
 import TextField from "@mui/material/TextField";
 
-const useStyles = makeStyles(() => ({
-  textField: {
-    border: "solid 2px black",
-    borderRadius: "9px",
-    background: "rgb(237, 239, 245)",
-  },
-}));
-
 const Input_Field = ({ input, onChange }) => {
-  const classes = useStyles();
-
   return (
     <TextField
       onChange={onChange}
@@ -20,6 +8,9 @@ const Input_Field = ({ input, onChange }) => {
         margin: 1,
         marginLeft: 0,
         padding: 0,
+        border: "solid 2px black",
+        borderRadius: "9px",
+        background: "rgb(237, 239, 245)",
       }}
       margin="normal"
       required
@@ -48,7 +39,6 @@ const Input_Field = ({ input, onChange }) => {
         },
         shrink: true,
       }}
-      className={classes.textField}
       type={input.type}
     />
   );
