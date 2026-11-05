@@ -240,39 +240,70 @@ const justJoe =  [ {
   password: "nugget",
   name: "joe",
   isAdmin: true,
+  stage: 1
 }]
 
 const syncAndSeed = async () => {
   await db.sync({ force: true });
   /////////////////////////////////////////////////////////////
-  const [joe, kelly, nicole, dalton, katie, polizzi, matt, amber] =
-    await Promise.all(
-      users.map((u) =>
-        User.create({
-          email: u.email,
-          password: u.password,
-          name: u.name,
-          isAdmin: u.isAdmin,
-          stage: u.stage,
-          score1: u.score1,
-          score2: u.score2,
-          score3: u.score3,
-          score4: u.score4,
-          score5: u.score5,
-          score6: u.score6,
-          score7: u.score7,
-          score8: u.score8,
-          notes1: u.notes1,
-          notes2: u.notes2,
-          notes3: u.notes3,
-          notes4: u.notes4,
-          notes5: u.notes5,
-          notes6: u.notes6,
-          notes7: u.notes7,
-          notes8: u.notes8,
-        })
-      )
-    );
+  // const [joe, kelly, nicole, dalton, katie, polizzi, matt, amber] =
+  //   await Promise.all(
+  //     users.map((u) =>
+  //       User.create({
+  //         email: u.email,
+  //         password: u.password,
+  //         name: u.name,
+  //         isAdmin: u.isAdmin,
+  //         stage: u.stage,
+  //         score1: u.score1,
+  //         score2: u.score2,
+  //         score3: u.score3,
+  //         score4: u.score4,
+  //         score5: u.score5,
+  //         score6: u.score6,
+  //         score7: u.score7,
+  //         score8: u.score8,
+  //         notes1: u.notes1,
+  //         notes2: u.notes2,
+  //         notes3: u.notes3,
+  //         notes4: u.notes4,
+  //         notes5: u.notes5,
+  //         notes6: u.notes6,
+  //         notes7: u.notes7,
+  //         notes8: u.notes8,
+  //       })
+  //     )
+  //   );
+
+  const [ joe] =
+      await Promise.all(
+          justJoe.map((u) =>
+              User.create({
+                email: u.email,
+                password: u.password,
+                name: u.name,
+                isAdmin: u.isAdmin,
+                stage: u.stage,
+                score1: u.score1,
+                score2: u.score2,
+                score3: u.score3,
+                score4: u.score4,
+                score5: u.score5,
+                score6: u.score6,
+                score7: u.score7,
+                score8: u.score8,
+                notes1: u.notes1,
+                notes2: u.notes2,
+                notes3: u.notes3,
+                notes4: u.notes4,
+                notes5: u.notes5,
+                notes6: u.notes6,
+                notes7: u.notes7,
+                notes8: u.notes8,
+                stage: u.stage
+              })
+          )
+      );
 
   await Promise.all(
     wines.map((w) =>

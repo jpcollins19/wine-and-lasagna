@@ -69,7 +69,7 @@ const Create_Account_Page = () => {
 
   const joe = users.filter(u => u.email === 'jpatcollins@gmail.com');
 
-  const locked = joe.score1 === 69
+  const locked = joe.stage === 1
 
   console.log('locked', locked)
 
