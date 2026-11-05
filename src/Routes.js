@@ -2,7 +2,7 @@ import { useState } from "react";
 import { withRouter, Route, Switch, Redirect } from "react-router-dom";
 import { findJoe } from "./store";
 import { useSelector } from "react-redux";
-import Loading from "./components/Misc/Loading";
+import Loading from "./components/Misc/Loading.js";
 import Pre_Sign_In_Page from "./components/PreSignIn/Pre_Sign_In_Page";
 import Sign_In_Page from "./components/UserAccount/SignIn/Sign_In_Page";
 import Create_Account_Page from "./components/UserAccount/CreateAccount/Create_Account_Page";

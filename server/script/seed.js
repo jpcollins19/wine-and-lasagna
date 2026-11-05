@@ -3,9 +3,17 @@ const {
   models: { User, Wine },
 } = require("../db/index.js");
 
+//notes
+//see current flow with seeded info & get used to app
+//check on another user log in experience
+//push up fresh code with blocking people from creating an account
+//verify that you cant create a new account if joe score is 69
+//load justJoe, and roll through the flow from scratch
+//deploy to byah-masters-byah
+
 const users = [
   {
-    email: "joe@gmail.com",
+    email: "jpatcollins@gmail.com",
     password: "nugget",
     name: "joe",
     isAdmin: true,
@@ -226,6 +234,13 @@ const wines = [
   { number: 7, name: "wineNameMatt" },
   { number: 8, name: "wineNameAmber" },
 ];
+
+const justJoe =  [ {
+  email: "jpatcollins@gmail.com",
+  password: "nugget",
+  name: "joe",
+  isAdmin: true,
+}]
 
 const syncAndSeed = async () => {
   await db.sync({ force: true });
