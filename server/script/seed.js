@@ -224,15 +224,26 @@ const users = [
 //   { number: 8 },
 // ];
 
+// const wines = [
+//   { number: 1, name: "wineNameJoe" },
+//   { number: 2, name: "wineNameKelly" },
+//   { number: 3, name: "wineNameDalton" },
+//   { number: 4, name: "wineNameNicole" },
+//   { number: 5, name: "wineNamePolizzi" },
+//   { number: 6, name: "wineNameKatie" },
+//   { number: 7, name: "wineNameMatt" },
+//   { number: 8, name: "wineNameAmber" },
+// ];
+
 const wines = [
-  { number: 1, name: "wineNameJoe" },
-  { number: 2, name: "wineNameKelly" },
-  { number: 3, name: "wineNameDalton" },
-  { number: 4, name: "wineNameNicole" },
-  { number: 5, name: "wineNamePolizzi" },
-  { number: 6, name: "wineNameKatie" },
-  { number: 7, name: "wineNameMatt" },
-  { number: 8, name: "wineNameAmber" },
+  { number: 1, },
+  { number: 2,  },
+  { number: 3,  },
+  { number: 4, },
+  { number: 5,  },
+  { number: 6, },
+  { number: 7,  },
+  { number: 8,  },
 ];
 
 const justJoe =  [ {
@@ -305,14 +316,14 @@ const syncAndSeed = async () => {
           )
       );
 
-  // await Promise.all(
-  //   wines.map((w) =>
-  //     Wine.create({
-  //       number: w.number,
-  //       name: w.name,
-  //     })
-  //   )
-  // );
+  await Promise.all(
+    wines.map((w) =>
+      Wine.create({
+        number: w.number,
+        name: w.name,
+      })
+    )
+  );
 };
 
 module.exports = syncAndSeed;
