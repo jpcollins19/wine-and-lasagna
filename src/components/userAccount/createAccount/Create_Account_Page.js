@@ -89,60 +89,34 @@ const Create_Account_Page = () => {
 
   const onSubmit = async (ev) => {
     ev.preventDefault();
-    try {
-      if (
-          !validateEmail(email) ||
-          userEmails.includes(email) ||
-          userNames.includes(formatEmail(name)) ||
-          password !== password1
-      ) {
-        return showError(
-            !validateEmail(email)
-                ? "Error: Invalid Email Address"
-                : userEmails.includes(email)
-                    ? "Error: Email already in use"
-                    : userNames.includes(formatEmail(name))
-                        ? "Error: Name already in use"
-                        : "Error: Password is not identical"
-        );
+    if(!locked){
+      try {
+        if (
+            !validateEmail(email) ||
+            userEmails.includes(email) ||
+            userNames.includes(formatEmail(name)) ||
+            password !== password1
+        ) {
+          return showError(
+              !validateEmail(email)
+                  ? "Error: Invalid Email Address"
+                  : userEmails.includes(email)
+                      ? "Error: Email already in use"
+                      : userNames.includes(formatEmail(name))
+                          ? "Error: Name already in use"
+                          : "Error: Password is not identical"
+          );
+        }
+        const user = {
+          email,
+          name,
+          password,
+        };
+        dispatch(addUser(user, history));
+      } catch (err) {
+        console.log(err);
       }
-      const user = {
-        email,
-        name,
-        password,
-      };
-      dispatch(addUser(user, history));
-    } catch (err) {
-      console.log(err);
     }
-    // if(!locked){
-    //   try {
-    //     if (
-    //         !validateEmail(email) ||
-    //         userEmails.includes(email) ||
-    //         userNames.includes(formatEmail(name)) ||
-    //         password !== password1
-    //     ) {
-    //       return showError(
-    //           !validateEmail(email)
-    //               ? "Error: Invalid Email Address"
-    //               : userEmails.includes(email)
-    //                   ? "Error: Email already in use"
-    //                   : userNames.includes(formatEmail(name))
-    //                       ? "Error: Name already in use"
-    //                       : "Error: Password is not identical"
-    //       );
-    //     }
-    //     const user = {
-    //       email,
-    //       name,
-    //       password,
-    //     };
-    //     dispatch(addUser(user, history));
-    //   } catch (err) {
-    //     console.log(err);
-    //   }
-    // }
   };
 
   return (
