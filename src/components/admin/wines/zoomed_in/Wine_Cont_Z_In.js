@@ -1,4 +1,4 @@
-import Button from "../../../Misc/Button";
+import Button from "../../../misc/Button";
 
 const Wine_Cont_Z_In = ({ wine, setZoomedIn, onChange }) => {
   return (

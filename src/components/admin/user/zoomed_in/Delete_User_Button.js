@@ -1,4 +1,4 @@
-import Button from "../../../Misc/Button";
+import Button from "../../../misc/Button";
 
 const Delete_User_Button = ({ deleteUserTools }) => {
   const deleteUserNeeded = deleteUserTools.deleteUserNeeded;

@@ -1,4 +1,4 @@
-import Button from "../../../Misc/Button";
+import Button from "../../../misc/Button";
 import Input_Cont from "../Input_Cont";
 import Delete_User_Button from "./Delete_User_Button";
 

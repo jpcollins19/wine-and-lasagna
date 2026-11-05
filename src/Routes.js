@@ -2,17 +2,17 @@ import { useState } from "react";
 import { withRouter, Route, Switch, Redirect } from "react-router-dom";
 import { findJoe } from "./store";
 import { useSelector } from "react-redux";
-import Loading from "./components/Misc/Loading";
-import Pre_Sign_In_Page from "./components/PreSignIn/Pre_Sign_In_Page";
-import Sign_In_Page from "./components/UserAccount/SignIn/Sign_In_Page";
-import Create_Account_Page from "./components/UserAccount/CreateAccount/Create_Account_Page";
-import Action_Confirmation from "./components/UserAccount/Action_Confirmation";
+import Loading from "./components/misc/Loading";
+import Pre_Sign_In_Page from "./components/preSignIn/Pre_Sign_In_Page";
+import Sign_In_Page from "./components/userAccount/signIn/Sign_In_Page";
+import Create_Account_Page from "./components/userAccount/createAccount/Create_Account_Page";
+import Action_Confirmation from "./components/userAccount/Action_Confirmation";
 import Rank_Wines from "./components/rank_wines/Rank_Wines";
 import Single_Wine_Rank from "./components/rank_wines/single_wine_rank/Single_Wine_Rank";
 import Admin from "./components/admin/Admin";
 import Results from "./components/results/Results";
 import Single_Result from "./components/results/single_result_page/Single_Result";
-import NoMatch from "./components/Misc/No_Match";
+import NoMatch from "./components/misc/No_Match";
 
 const Routes = () => {
   const user = useSelector((state) => state.auth);

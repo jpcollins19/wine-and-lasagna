@@ -7,9 +7,9 @@ import {
   findJoe,
 } from "../../../store";
 import toast, { Toaster } from "react-hot-toast";
-import Button from "../../Misc/Button";
-import Cancel from "../../Misc/Cancel";
-import Dropdown from "../../Misc/Dropdown";
+import Button from "../../misc/Button";
+import Cancel from "../../misc/Cancel";
+import Dropdown from "../../misc/Dropdown";
 import Error from "@mui/icons-material/ErrorOutline";
 
 const Rank_Wine = ({ wine }) => {

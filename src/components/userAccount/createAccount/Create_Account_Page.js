@@ -10,7 +10,7 @@ import {
 import toast, { Toaster } from "react-hot-toast";
 import Input_Field from "../Input_Field";
 import Sign_In_Options from "../Sign_In_Options";
-import Button from "../../Misc/Button";
+import Button from "../../misc/Button";
 import Error from "@mui/icons-material/ErrorOutline";
 
 const Create_Account_Page = () => {

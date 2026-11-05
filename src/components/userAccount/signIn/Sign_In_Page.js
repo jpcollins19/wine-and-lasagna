@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { authenticate, formatEmail } from "../../../store";
 import Input_Field from "../Input_Field";
 import Sign_In_Options from "../Sign_In_Options";
-import Button from "../../Misc/Button";
+import Button from "../../misc/Button";
 import toast, { Toaster } from "react-hot-toast";
 import Error from "@mui/icons-material/ErrorOutline";
 
