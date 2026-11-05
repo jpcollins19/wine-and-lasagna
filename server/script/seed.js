@@ -305,14 +305,14 @@ const syncAndSeed = async () => {
           )
       );
 
-  await Promise.all(
-    wines.map((w) =>
-      Wine.create({
-        number: w.number,
-        name: w.name,
-      })
-    )
-  );
+  // await Promise.all(
+  //   wines.map((w) =>
+  //     Wine.create({
+  //       number: w.number,
+  //       name: w.name,
+  //     })
+  //   )
+  // );
 };
 
 module.exports = syncAndSeed;
